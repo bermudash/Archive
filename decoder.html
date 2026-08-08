@@ -134,9 +134,7 @@
       placeholder="ENTER FRAGMENT"
     >
 
-    <button onclick="decode()">
-      SUBMIT
-    </button>
+    <button onclick="decode()">SUBMIT</button>
 
     <div id="message"></div>
 
@@ -169,10 +167,7 @@
 
       </div>
 
-      <button
-        id="continue"
-        onclick="checkKey()"
-      >
+      <button id="continue" onclick="checkKey()">
         CONTINUE
       </button>
 
@@ -181,52 +176,42 @@
   </div>
 
   <script>
-
     const correctFragment = "7310429185";
-
     const correctKey = "Q7M-29X";
 
     function decode() {
 
-      const input =
-        document
-          .getElementById("fragmentInput")
-          .value
-          .trim();
+      const input = document
+        .getElementById("fragmentInput")
+        .value
+        .trim();
 
-      const message =
-        document.getElementById("message");
+      const message = document
+        .getElementById("message");
 
-      const fragment =
-        document.getElementById("fragment");
+      const fragment = document
+        .getElementById("fragment");
 
       if (input === correctFragment) {
 
-        message.textContent =
-          "fragment accepted.";
+        message.textContent = "fragment accepted.";
+        fragment.style.display = "block";
 
-        fragment.style.display =
-          "block";
-
-        document.getElementById("continue").style.display =
-          "block";
+        document
+          .getElementById("continue")
+          .style.display = "block";
 
       } else {
 
-        message.textContent =
-          "fragment rejected.";
-
-        fragment.style.display =
-          "none";
+        message.textContent = "fragment rejected.";
+        fragment.style.display = "none";
 
       }
-
     }
 
     function checkKey() {
 
-      const key =
-        prompt("enter what you found.");
+      const key = prompt("enter what you found.");
 
       if (
         key &&
@@ -241,78 +226,18 @@
         alert("the archive does not recognize it.");
 
       }
-
     }
 
     document
       .getElementById("fragmentInput")
-      .addEventListener(
-        "keydown",
-        function(event) {
+      .addEventListener("keydown", function(event) {
 
-          if (event.key === "Enter") {
-            decode();
-          }
-
+        if (event.key === "Enter") {
+          decode();
         }
-      );
 
+      });
   </script>
 
 </body>
-</html>        fragment.style.display =
-          "block";
-
-        document.getElementById("continue").style.display =
-          "block";
-
-      } else {
-
-        message.textContent =
-          "fragment rejected.";
-
-        fragment.style.display =
-          "none";
-
-      }
-
-    }
-
-    function checkKey() {
-
-      const key =
-        prompt("enter what you found.");
-
-      if (
-        key &&
-        key.trim().toUpperCase() === correctKey
-      ) {
-
-        window.location.href =
-          "https://bermudash.github.io/Archive/";
-
-      } else {
-
-        alert("the archive does not recognize it.");
-
-      }
-
-    }
-
-    document
-      .getElementById("fragmentInput")
-      .addEventListener(
-        "keydown",
-        function(event) {
-
-          if (event.key === "Enter") {
-            decode();
-          }
-
-        }
-      );
-
-  </script>
-
-</body>
-</html>
+    </html>
